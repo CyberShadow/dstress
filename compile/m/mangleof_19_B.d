@@ -15,7 +15,7 @@ template Apple(alias F){
 
 	alias void function (Basket) H;
 
-	const char [] mangledname = typeof(H).mangleof;
+	const char [] mangledname = H.mangleof;
 }
 
 template Peach(alias A){

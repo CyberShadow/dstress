@@ -11,7 +11,7 @@ module dstress.run.f.foreach_38_B;
 
 void Fields(C)(){
 	foreach(i, a; typeof(C.tupleof)){
-		static assert(is(typeof(a) == typeof(C.tupleof)[i]));
+		static assert(is(a == typeof(C.tupleof)[i]));
 	}
 }
 

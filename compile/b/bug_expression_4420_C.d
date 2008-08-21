@@ -13,6 +13,6 @@ template Template(Ts...) {
 	alias Ts tuple;
 }
 
-static if(!is(typeof(Template!().tuple))){
+static if(!is(Template!().tuple)){
 	static assert(0);
 }
