@@ -7,9 +7,7 @@
 // @uri@	http://d.puremagic.com/issues/show_bug.cgi?id=1143
 // @desc@	[Issue 1143] Assertion failure: '0' on line 850 in 'template.c' - On specialization of IFTI template parameters.
 
-// __DSTRESS_ELINE__ 18
-
-module dstress.nocompile.t.template_61_C;
+module dstress.run.t.template_61_C;
 
 void foo(T, U : float = T)(char[] data, T t){
 }

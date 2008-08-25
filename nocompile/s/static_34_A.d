@@ -6,11 +6,14 @@
 // @date@	2005-10-28
 // @uri@	http://www.digitalmars.com/pnews/read.php?server=news.digitalmars.com&group=digitalmars.D.bugs&artnum=5233
 
-module dstress.run.s.static_34_A;
+// __DSTRESS_ELINE__ 17
+
+module dstress.nocompile.s.static_34_A;
 
 int main(){
 	class C{
 		static C create(){
+			// ERROR: needs context for newing nested class
 			return new C;
 		}
 	}
