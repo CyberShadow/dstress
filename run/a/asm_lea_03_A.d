@@ -22,7 +22,7 @@ version(D_InlineAsm_X86){
 		}
 	}
 }else{
-	pragma(msg, "DSTRESS{XFAIl}: X86 assembler not supported");
+	pragma(msg, "DSTRESS{XFAIL}: X86 assembler not supported");
 	static assert(0);
 }
 
