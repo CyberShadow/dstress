@@ -2,12 +2,20 @@
 // $Date$
 // $Author$
 
-// __DSTRESS_ELINE__ 14
+// __DSTRESS_ELINE__ 22
 
 module dstress.nocompile.a.asm_frstor_02_H;
 
-void main(){
-	version(D_InlineAsm_X86){
+version(D_InlineAsm_X86){
+	version = test;
+}else version(D_Inline_Asm_X86_64){
+	version = test;
+}else{
+	static assert(0, "DSTRESS{XFAIL}: no inline x86 asm support");
+}
+
+version(test){
+	void main(){
 		cfloat x;
 		
 		asm{
