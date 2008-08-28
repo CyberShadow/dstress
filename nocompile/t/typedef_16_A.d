@@ -6,8 +6,6 @@
 // @date@	2006-07-11
 // @uri@	http://d.puremagic.com/issues/show_bug.cgi?id=249
 
-// __DSTRESS_ELINE__ 14
-
 module dstress.nocompile.t.typedef_16_A;
 
 typedef foo bar;
