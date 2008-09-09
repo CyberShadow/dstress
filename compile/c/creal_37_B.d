@@ -19,7 +19,7 @@ static assert(getRealPart!(a) == 1.0L);
 
 
 template getImaginaryPart(creal x){
-	const real getImanginaryPart = x.im;
+	const real getImaginaryPart = x.im;
 }
 
 static assert(getImaginaryPart!(a) == 2.0L);
