@@ -17,7 +17,7 @@ class X{
 int main(){
 	X x;
 
-	if((typeof(x))() != 3){
+	if(typeof(x)() != 3){
 		assert(0);
 	}
 
