@@ -7,7 +7,7 @@
 // @uri@	news:cp2vjj$1ljt$1@digitaldaemon.com
 // @url@	nntp://news.digitalmars.com/digitalmars.D.bugs
 
-module dstress.complex.linking.a;
+module /*dstress.*/ complex.linking.a;
 
 struct StructA(T){
 	void set(T x) {

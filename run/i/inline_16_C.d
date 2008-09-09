@@ -32,7 +32,7 @@ class Foo2 : Foo{
 }
 
 int main(){
-	Fooi2 f = new Foo2();
+	Foo2 f = new Foo2();
 
 	if(status != 0){
 		assert(0);

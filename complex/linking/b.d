@@ -7,9 +7,9 @@
 // @uri@        news:cp2vjj$1ljt$1@digitaldaemon.com
 // @url@        nntp://news.digitalmars.com/digitalmars.D.bugs
 
-module dstress.complex.linking.b;
+module /*dstress.*/ complex.linking.b;
 
-import dstress.complex.linking.a;
+import /*dstress.*/ complex.linking.a;
 
 void functB() {
 	StructA!(int)* x;

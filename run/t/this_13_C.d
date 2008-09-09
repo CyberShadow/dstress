@@ -9,9 +9,13 @@
 
 module dstress.run.t.this_13_C;
 
+interface I {
+	void get( char[] s );
+}
+
 class C{
 	void init(){
-		I i = new class() {
+		I i = new class() I {
 			void get( char[] s ){
 				func();
 			}
