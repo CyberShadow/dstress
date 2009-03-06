@@ -4,33 +4,30 @@
 
 module dstress.run.creal_15;
 
+bool isIdentical(real x, real y)
+{
+	long* x64 = cast(long*)&x;
+	long* y64 = cast(long*)&y;
+	ushort* x16 = cast(ushort*)&x + 4;
+	ushort* y16 = cast(ushort*)&y + 4;
+	return *x64 == *y64 && *x16 == *y16;
+}
+
 int main(){
 	creal a = creal.nan;
 	creal b;
-	byte* X = cast(byte*)(cast(void*)&a);
 
 	b = real.nan + ireal.nan;
-	byte* Y = cast(byte*)(cast(void*)&b);
+	assert(isIdentical(a.re, b.re));
+	assert(isIdentical(a.im, b.im));
 
-	for(size_t i=0; i<a.sizeof; i++){
-		assert(X[i]==Y[i]);
-	}
-
-	real c= real.nan;
+	real c = real.nan;
+        
 	real d=a.re;
-	X = cast(byte*)(cast(void*)&c);
-	Y = cast(byte*)(cast(void*)&d);
-
-	for(size_t i=0; i<c.sizeof; i++){
-		assert(X[i]==Y[i]);
-	}
+	assert(isIdentical(c, d));
 
 	d=a.im;
-	X = cast(byte*)(cast(void*)&c);
-	Y = cast(byte*)(cast(void*)&d);
-	for(size_t i=0; i<c.sizeof; i++){
-		assert(X[i]==Y[i]);
-	}
-	
+	assert(isIdentical(c, d));
+
 	return 0;
 }

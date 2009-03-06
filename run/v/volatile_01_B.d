@@ -20,7 +20,9 @@ template load( T, int i, size_t sizeofT : 4 = T.sizeof ){
 
 int main(){
 	int i;
-	load!(int,1)(i);
-	load!(int,2)(i);
+	version (X86) {
+		load!(int,1)(i);
+		load!(int,2)(i);
+	}
 	return 0;
 }

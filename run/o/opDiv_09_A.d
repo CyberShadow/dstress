@@ -8,6 +8,15 @@
 
 module dstress.run.o.opDiv_09_A;
 
+bool isIdentical(real x, real y)
+{
+	long* x64 = cast(long*)&x;
+	long* y64 = cast(long*)&y;
+	ushort* x16 = cast(ushort*)&x + 4;
+	ushort* y16 = cast(ushort*)&y + 4;
+	return *x64 == *y64 && *x16 == *y16;
+}
+
 int main(){
 	real a = -1.0L / 0.0L;
 
@@ -15,14 +24,9 @@ int main(){
 	real c = 0.0L;
 	real d;
 
-	byte* X = cast(byte*) (cast(void*) &a);
-
 	d = b/c;
-	byte* Y = cast(byte*) (cast(void*) &d);
 
-	for(int i=0; i<a.sizeof; i++){
-		assert(X[i]==Y[i]);
-	}
+	assert(isIdentical(a, d));
 
 	return 0;
 }
