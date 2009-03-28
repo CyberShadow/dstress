@@ -9,7 +9,7 @@
 
 module dstress.run.i.invariant_33_B;
 
-struct X{
+class X{
 	synchronized invariant(){
 		int x;
 	}
@@ -19,7 +19,7 @@ struct X{
 }
 
 int main(){
-	X x;
+	X x = new X;
 
 	x.foo();
 	return 0;
