@@ -9,6 +9,19 @@
 
 module dstress.run.s.switch_22_C;
 
+/+
+	The validity of this test case is dubious:
+	the spec is not explicit about scopes in a switch statement
+	and DMD transforms the scope(success) into:
+	
+	switch(3){
+		bool success = true;
+		try { default: }
+		catch(Object e) { success = false; throw e; }
+		finally { if(success) i--; }
+	}
++/
+
 int main(){
 	int i = 2;
 	
