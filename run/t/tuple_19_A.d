@@ -20,7 +20,7 @@ version(D_InlineAsm_X86){
 version(test){
 	int a(X...)(X x){
 		int i = 0xAB_CD_EF_12;
-		alias X[0] var1;
+		alias x[0] var1;
 		asm {
 			mov EAX, var1;
 			inc EAX;
