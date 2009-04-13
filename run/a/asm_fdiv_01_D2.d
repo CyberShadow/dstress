@@ -2,7 +2,7 @@
 // $Date$
 // $Author$
 
-module dstress.run.a.asm_fdivrp_01_B;
+module dstress.run.a.asm_fdiv_01_D2;
 
 version(D_InlineAsm_X86){
 	version = runTest;
@@ -18,20 +18,28 @@ version(runTest){
 
 		float a = -3.0f;
 		float b = 12.0f;
+		float c;
 
 		asm{
-			fldz;
-			fld b;
 			fld a;
-			fdivrp;
-			fstp a;
-			fstp b;
+			fld b;
+			fdiv ST,ST(1);
+			fstp c;
 		}
 
-		if(a != -4.0f){
+		if(c != -4.0f){
 			assert(0);
 		}
-		if(b != 0.0f){
+
+		asm{
+			fld a;
+			fld b;
+			fdiv ST(1),ST;
+			fstp c;
+			fstp c;
+		}
+
+		if(c != a/b){
 			assert(0);
 		}
 

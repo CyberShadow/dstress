@@ -2,7 +2,7 @@
 // $Date$
 // $Author$
 
-module dstress.run.a.asm_fsubp_01_A;
+module dstress.run.a.asm_fdivp_01_B;
 
 version(D_InlineAsm_X86){
 	version = runTest;
@@ -16,30 +16,22 @@ version(runTest){
 	int main(){
 		haveFPU!()();
 
-		double a = -1.2;
-		double b = 2.4;
+		float a = 12.0f;
+		float b = -3.0f;
 
 		asm{
-			fld1;
 			fldz;
 			fld a;
 			fld b;
-			fsubp;
+			fdivp;
 			fstp a;
 			fstp b;
 		}
 
-		a -= 3.6;
-
-		if(a < 0.0){
-			a = -a;
-		}
-
-		if(a > a.epsilon * 4.0){
+		if(a != -4.0f){
 			assert(0);
 		}
-
-		if(b != 0.0){
+		if(b != 0.0f){
 			assert(0);
 		}
 
