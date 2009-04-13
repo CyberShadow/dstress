@@ -2,7 +2,7 @@
 // $Date$
 // $Author$
 
-module dstress.run.a.asm_fdivr_01_D;
+module dstress.run.a.asm_fdivr_01_D2;
 
 version(D_InlineAsm_X86){
 	version = runTest;
