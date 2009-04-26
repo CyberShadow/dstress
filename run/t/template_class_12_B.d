@@ -12,7 +12,7 @@ class Outer {
 	int x;
 	
 	abstract class AbstractInner {
-		void f();
+		abstract void f();
 	}
 
 	class Inner(int i) : AbstractInner {

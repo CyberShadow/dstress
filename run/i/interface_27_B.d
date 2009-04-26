@@ -10,7 +10,7 @@
 module dstress.run.i.interface_27_B;
 
 abstract class X{
-	int foo();
+	abstract int foo();
 }
 
 int main() {
