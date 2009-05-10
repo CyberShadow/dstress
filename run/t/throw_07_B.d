@@ -63,22 +63,19 @@ int main(){
 	Tester t = new Tester(&foo);
 
 	try{
-		if(status++ != 5){
-			assert(0);
-		}
 		t.test();
 		assert(0);
 	}catch(XException e){
-		if(status++ != 6){
+		if(status++ != 5){
 			assert(0);
 		}
 	}finally{
-		if(status++ != 7){
+		if(status++ != 6){
 			assert(0);
 		}
 	}
 
-	if(status != 8){
+	if(status != 7){
 		assert(0);
 	}
 	return 0;
