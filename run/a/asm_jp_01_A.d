@@ -15,7 +15,7 @@ version(runTest){
 		int a = int.min;
 
 		asm{
-			mox EAX, 0;
+			mov EAX, 0;
 			mov AL, 1;
 			cmp AL, 1;
 			jp save;
