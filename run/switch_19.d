@@ -13,7 +13,7 @@ class T{
 }
 
 int main(char[][] args){
-	auto T t=new T();
+	scope T t=new T();
 
 	switch(args.length){
 		case 1:

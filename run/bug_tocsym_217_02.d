@@ -12,7 +12,7 @@ class A{
 }
 
 int main(){
-	auto A a = new A();
+	scope A a = new A();
 
 	try{
 	}catch(Exception e){ 

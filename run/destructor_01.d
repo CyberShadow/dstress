@@ -25,7 +25,7 @@ class ClassA{
 class ClassB : ClassA {}
 
 void test(){
-	auto ClassB b = new ClassB();
+	scope ClassB b = new ClassB();
 	
 }
 

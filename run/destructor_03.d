@@ -24,7 +24,7 @@ class MyClass{
 
 int main(){
 	try{
-		auto MyClass m = new MyClass();
+		scope MyClass m = new MyClass();
 		assert(status == 1);
 		delete m;
 	}catch(Exception e){

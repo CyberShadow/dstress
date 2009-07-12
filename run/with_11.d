@@ -9,11 +9,11 @@
 
 module dstress.run.with_11;
 
-auto class AutoClass{
+scope class ScopeClass{
 }
 
 int main(){
-	auto AutoClass ac = new AutoClass();
+	scope ScopeClass ac = new ScopeClass();
 
 	with(ac){
 	}
