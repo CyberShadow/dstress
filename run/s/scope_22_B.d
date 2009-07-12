@@ -8,17 +8,17 @@
 
 // __DSTRESS_DFLAGS__ -version=always
 
-module dstress.run.a.auto_16_C;
+module dstress.run.s.scope_22_B;
 
-auto class C{
-	string toString(){
+class C{
+	char[] toString(){
 		return "hallo bug";
 	}
 }
 
 int main(){
-	auto C c;
 	version(always){
+		scope C c;
 		c = new C();
 	}
 

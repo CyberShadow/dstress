@@ -7,9 +7,9 @@
 // @uri@	news:chtj6t$24bm$1@digitaldaemon.com
 // @uri@	http://www.digitalmars.com/pnews/read.php?server=news.digitalmars.com&group=digitalmars.D.bugs&artnum=1821
 
-module dstress.run.auto_01;
+module dstress.run.scope_01;
 
-auto class AutoClass{
+scope class ScopeClass{
 	this(){
 		throw new Exception("error msg");
 	}
@@ -20,7 +20,7 @@ auto class AutoClass{
 
 int main(){
 	try{
-		auto AutoClass ac = new AutoClass();
+		scope ScopeClass ac = new ScopeClass();
 	}catch{
 		return 0;
 	}

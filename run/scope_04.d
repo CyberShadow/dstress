@@ -7,11 +7,11 @@
 // @uri@	news:chtj6t$24bm$1@digitaldaemon.com
 // @uri@	http://www.digitalmars.com/pnews/read.php?server=news.digitalmars.com&group=digitalmars.D.bugs&artnum=1821
 
-module dstress.run.auto_04;
+module dstress.run.scope_04;
 
 int status;
 
-auto class AutoClass{
+scope class ScopeClass{
 	this(){
 		if(0 != status){
 			assert(0);
@@ -28,7 +28,7 @@ auto class AutoClass{
 }
 
 void check(){
-	auto AutoClass ac = new AutoClass();
+	scope ScopeClass ac = new ScopeClass();
 	throw new Exception("check error");
 }
 

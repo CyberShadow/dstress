@@ -7,7 +7,7 @@
 // @uri@	news:dneava$evs$1@digitaldaemon.com
 // @uri@	http://d.puremagic.com/issues/show_bug.cgi?id=705
 
-module dstress.run.a.auto_13_A;
+module dstress.run.s.scope_20_A;
 
 int[] status;
 
@@ -25,7 +25,7 @@ class Class {
 }
 
 template Template (int id) {
-	auto Class c = new Class(id);
+	scope Class c = new Class(id);
 }
 
 int main () {

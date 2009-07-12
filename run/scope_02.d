@@ -5,11 +5,11 @@
 // @author@	Sean Kelly <sean@f4.ca>
 // @date@	2004-09-11
 
-module dstress.run.auto_02;
+module dstress.run.scope_02;
 
 int status;
 
-auto class AutoClass{
+scope class ScopeClass{
 	void bad(){
 		throw new Exception("error msg");
 	}
@@ -25,7 +25,7 @@ auto class AutoClass{
 
 void test(){
 	try{
-		auto AutoClass ac = new AutoClass();
+		scope ScopeClass ac = new ScopeClass();
 		ac.bad();
 	}catch{
 		if(status == -1){

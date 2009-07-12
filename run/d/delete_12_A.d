@@ -31,7 +31,7 @@ class Foo{
 }
 
 void test(){
-	auto Foo f = new Foo();
+	scope Foo f = new Foo();
 }
 
 int main(){

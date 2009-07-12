@@ -7,11 +7,11 @@
 // @uri@	news:dr5uqg$2hn7$1@digitaldaemon.com
 // @uri@	http://d.puremagic.com/issues/show_bug.cgi?id=704
 
-module dstress.run.a.auto_14_A;
+module dstress.run.s.scope_21_B;
 
 bool hadDtor = false;
 
-auto class MyClass{
+class MyClass{
 	this(){
 		throw new Exception("dummy");
 	}
@@ -23,8 +23,9 @@ auto class MyClass{
 }
 
 int main(){
+
 	try{
-		auto MyClass c;
+		scope MyClass c;
 		c = new MyClass();
 	}catch{
 		if(!hadDtor){

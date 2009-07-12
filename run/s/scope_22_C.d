@@ -6,17 +6,19 @@
 // @date@	2006-02-26
 // @uri@	http://www.digitalmars.com/pnews/read.php?server=news.digitalmars.com&group=digitalmars.D.bugs&artnum=6373
 
-module dstress.run.a.auto_16_A;
+// __DSTRESS_DFLAGS__ -version=always
 
-class C{
-	string toString(){
+module dstress.run.s.scope_22_C;
+
+scope class C{
+	char[] toString(){
 		return "hallo bug";
 	}
 }
 
 int main(){
-	auto C c;
-	version(all){
+	scope C c;
+	version(always){
 		c = new C();
 	}
 

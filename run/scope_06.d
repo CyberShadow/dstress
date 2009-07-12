@@ -2,11 +2,11 @@
 // $Date$
 // $Author$
 
-module dstress.run.auto_06;
+module dstress.run.scope_06;
 
 int status;
 
-auto class A{
+scope class A{
 	int cond;
 
 	this(int cond){
@@ -22,8 +22,8 @@ auto class A{
 }
 
 void test(){
-	auto A a = new A(-1);
-	auto A b = new A(0);
+	scope A a = new A(-1);
+	scope A b = new A(0);
 }
 
 int main(){

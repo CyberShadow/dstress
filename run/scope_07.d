@@ -6,14 +6,14 @@
 // @date@	2005-04-14
 // @uri@	http://www.digitalmars.com/pnews/read.php?server=news.digitalmars.com&group=digitalmars.D.bugs&artnum=3645
 
-module dstress.run.auto_08;
+module dstress.run.scope_07;
 
 int status;
 
-auto class Parent{
+scope class Parent{
 }
 
-auto class Child : Parent{
+scope class Child : Parent{
 	this(){
 		if(0 != status){
 			assert(0);
@@ -23,14 +23,14 @@ auto class Child : Parent{
 
 	~this(){
 		if(1 != status){
-			assert(0); 
+			assert(0);
 		}
 		status=2;
 	}
 }
 
 void test(){
-	auto Child o = new Child();
+	scope Parent o = new Child();
 	if(1 != status){
 		assert(0);
 	}
@@ -42,6 +42,7 @@ int main(){
 	if(status==2){
 		return 0;
 	}
+
 	assert(0);
 }
 

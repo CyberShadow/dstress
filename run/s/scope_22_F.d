@@ -8,22 +8,28 @@
 
 // __DSTRESS_DFLAGS__ -version=always
 
-module dstress.run.a.auto_16_D;
+module dstress.run.s.scope_22_F;
 
-auto class C{
-	string toString(){
+class C{
+	char[] toString(){
 		return "hallo bug";
 	}
 }
 
 int main(){
 	version(always){
-		auto C c;
+		scope C c;
 		c = new C();
 	}
 
-	if(c.toString() != "hallo bug"){
+	if((new C()).toString() != "hallo bug"){
 		assert(0);
+	}
+
+	version(always){
+		if(c.toString() != "hallo bug"){
+			assert(0);
+		}
 	}
 
 	return 0;

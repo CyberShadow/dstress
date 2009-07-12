@@ -8,11 +8,11 @@
 // @uri@	nntp://digitalmars.com/digitalmars.D.bugs/1821
 // @uri@	http://d.puremagic.com/issues/show_bug.cgi?id=1035
 
-module dstress.run.auto_03;
+module dstress.run.scope_03;
 
 int status;
 
-auto class AutoClass{
+scope class ScopeClass{
 	~this(){
 		if(0 != status){
 			assert(0);
@@ -26,7 +26,7 @@ void test(){
 	if(0 != status){
 		assert(0); 
 	}
-	auto AutoClass ac = new AutoClass();
+	scope ScopeClass ac = new ScopeClass();
 }
 
 int main(){
