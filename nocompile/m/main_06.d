@@ -2,8 +2,8 @@
 // $Date$
 // $Author$
 
-// return contains an Expression and no ExpressionStatement,
-// thus effectless code is legal
+// the expression in a return statement of a void function
+// may only have void type
 
 module dstress.compile.m.main_06;
 

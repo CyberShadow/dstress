@@ -20,5 +20,5 @@ class MyClass : IChild{
 void main(){
         IChild b = new MyClass();
 	Object o = cast(Object)b;
-	return 0;
+	return;
 }
