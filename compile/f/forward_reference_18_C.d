@@ -7,7 +7,7 @@
 // @uri@	http://d.puremagic.com/issues/show_bug.cgi?id=810
 // @desc@	[Issue 810] Cannot forward reference template
 
-module dstress.compile.f.forward_reference_18_D;
+module dstress.compile.f.forward_reference_18_C;
 
 Template!(int) stack;
-template Template(T) {}
+template Template(T) { alias T Template; }

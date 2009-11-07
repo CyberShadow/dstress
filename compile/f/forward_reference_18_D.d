@@ -9,5 +9,5 @@
 
 module dstress.compile.f.forward_reference_18_D;
 
-template Template(T) {}
+template Template(T) { alias T Template; }
 Template!(int) stack;
