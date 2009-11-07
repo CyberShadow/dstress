@@ -18,7 +18,7 @@ version(D_InlineAsm_X86){
 version(runTest){
 	int main(){
 		int i = 3;
-		long x = 0x4040_4040_4040_4040;
+		const long x = 0x4040_4040_4040_4040;
 		asm{
 			mov EAX, i;
 			dl x;
