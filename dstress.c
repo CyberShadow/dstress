@@ -157,7 +157,7 @@ typedef int pid_t;
 #define TORTURE_PREFIX		"torture-"
 
 #ifdef USE_POSIX
-#define		CRASH_RUN	"./crashRun 10 256"
+#define		CRASH_RUN	"./crashRun 30 1000"
 #ifdef USE_VALGRIND
 #define		VALGRIND	"valgrind --leak-check=no -q --suppressions=valgrind.suppress"	
 #else
