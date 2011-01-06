@@ -147,7 +147,7 @@ endef
 #
 nocompile : $(dstress__) nocompile_clean
 	echo '#!/bin/sh' > nocompile.sh
-	find nocompile -type f | grep -v ".svn" | sort -f | xargs -n 1 echo "$(dstress__) torture-nocompile" >> nocompile.sh
+	find nocompile -type f | grep -v ".svn" | sort -f | xargs -n 1 echo "$(dstress__) nocompile" >> nocompile.sh
 	chmod +x nocompile.sh
 	./nocompile.sh 2>> $(LOG)
 
@@ -177,7 +177,7 @@ endef
 #
 compile : $(dstress__) compile_clean
 	echo '#!/bin/sh' > compile.sh
-	find compile -type f | grep -v ".svn" | sort -f | xargs -n 1 echo "$(dstress__) torture-compile" >> compile.sh
+	find compile -type f | grep -v ".svn" | sort -f | xargs -n 1 echo "$(dstress__) compile" >> compile.sh
 	chmod +x compile.sh
 	./compile.sh 2>> $(LOG)
 
@@ -205,7 +205,7 @@ endef
 # 
 run : $(dstress__) run_clean
 	echo '#!/bin/sh' > run.sh
-	find run -type f | grep -v ".svn" | sort -f | xargs -n 1 echo "$(dstress__) torture-run" >> run.sh
+	find run -type f -name "*\\.d" | grep -v ".svn" | sort -f | xargs -n 1 echo "$(dstress__) run" >> run.sh
 	chmod +x run.sh
 	./run.sh 2>> $(LOG)
 
@@ -274,7 +274,7 @@ endef
 # 
 norun : $(dstress__) norun_clean
 	echo '#!/bin/sh' > norun.sh
-	find norun -type f | grep -v ".svn" | sort -f | xargs -n 1 echo "$(dstress__) torture-norun" >> norun.sh
+	find norun -type f -name "*\\.d" | grep -v ".svn" | sort -f | xargs -n 1 echo "$(dstress__) norun" >> norun.sh
 	chmod +x norun.sh
 	./norun.sh 2>> $(LOG)
 
