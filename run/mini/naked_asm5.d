@@ -19,7 +19,7 @@ int foo(int op)(int a, int b)
     {
     const OP = (op == '+') ? "add" : "sub";
     asm { naked; }
-    mixin("asm{"~OP~" ESI,EDI; mov EAX, ESI;}");
+    mixin("asm{"~OP~" EDI,ESI; mov EAX, EDI;}");
     asm { ret; }
     }
     else static assert(0, "todo");
