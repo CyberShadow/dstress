@@ -124,8 +124,8 @@ int main(){
 	assert('\&rceil;'==8969);
 	assert('\&lfloor;'==8970);
 	assert('\&rfloor;'==8971);
-	assert('\&lang;'==9001);
-	assert('\&rang;'==9002);
+	assert('\&lang;'==10216);
+	assert('\&rang;'==10217);
 	assert('\&loz;'==9674);
 	assert('\&spades;'==9824);
 	assert('\&clubs;'==9827);
